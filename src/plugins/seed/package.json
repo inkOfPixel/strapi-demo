@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "description": "A Strapi plugin to populate the database with seed data.",
   "strapi": {
-    "name": "iFixit Seed",
-    "description": "Populate the database with seed data.",
+    "name": "Seed",
+    "description": "Populate the database with iFixit seed data.",
     "kind": "plugin"
   },
   "dependencies": {},
