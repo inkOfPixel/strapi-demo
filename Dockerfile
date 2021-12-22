@@ -3,13 +3,16 @@ FROM strapi/base:alpine
 ARG STRAPI_VERSION
 RUN yarn global add @strapi/strapi@${STRAPI_VERSION}
 
-RUN mkdir /srv/app && chown 1000:1000 -R /srv/app
-
 WORKDIR /srv/app
 
-VOLUME /srv/app
+COPY ./package*.json /srv/app/
+RUN npm install
 
-COPY docker-entrypoint.sh /usr/local/bin/
-ENTRYPOINT ["docker-entrypoint.sh"]
+COPY ./src/ /srv/app/src/
+COPY ./config/ /srv/app/config/
+COPY ./database/ /srv/app/database/
+COPY ./public/ /srv/app/public/
 
-CMD ["strapi", "start"]
+RUN npm run build
+
+CMD ["npm", "start"]
