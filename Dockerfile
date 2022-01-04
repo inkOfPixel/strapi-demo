@@ -5,13 +5,13 @@ RUN yarn global add @strapi/strapi@${STRAPI_VERSION}
 
 WORKDIR /srv/app
 
-COPY ./package*.json /srv/app/
+COPY ./package*.json ./
 RUN npm install
 
-COPY ./src/ /srv/app/src/
-COPY ./config/ /srv/app/config/
-COPY ./database/ /srv/app/database/
-COPY ./public/ /srv/app/public/
+COPY ./src/ ./src/
+COPY ./config/ ./config/
+COPY ./database/ ./database/
+COPY ./public/ ./public/
 
 RUN npm run build
 
