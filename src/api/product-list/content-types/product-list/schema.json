@@ -134,6 +134,14 @@
         "product-list.related-posts"
       ],
       "required": true
+    },
+    "message": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
     }
   }
 }
